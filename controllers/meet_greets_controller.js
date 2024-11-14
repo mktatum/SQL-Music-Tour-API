@@ -1,5 +1,5 @@
 const meetGreets = require("express").Router();
-const { Band, MeetGreet, Event, MusicSet } = require("../models");
+const { Band, MeetGreet, Event } = require("../models");
 
 meetGreets.get("/", async (req, res) => {
   try {

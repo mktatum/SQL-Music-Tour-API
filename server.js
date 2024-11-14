@@ -34,6 +34,9 @@ app.use("/bands", bandsController);
 const eventsController = require("./controllers/events_controller");
 app.use("/events", eventsController);
 
+const meetGreetsController = require("./controllers/meet_greets_controller");
+app.use("/events", meetGreetsController);
+
 // LISTEN
 app.listen(process.env.PORT, async () => {
   await testSequelize();

@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class MeetGreet extends Model {
     /**
@@ -13,22 +11,25 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       MeetGreet.belongsTo(Band, {
         foreignKey: "band_id",
-        as: "band"
-      })
+        as: "band",
+      });
       MeetGreet.belongsTo(Event, {
         foreignKey: "event_id",
-        as: "event"
-      })
+        as: "event",
+      });
     }
   }
-  MeetGreet.init({
-    event_id: DataTypes.INTEGER,
-    band_id: DataTypes.INTEGER,
-    start_time: DataTypes.DATE,
-    end_time: DataTypes.DATE
-  }, {
-    sequelize,
-    modelName: 'MeetGreet',
-  });
+  MeetGreet.init(
+    {
+      event_id: DataTypes.INTEGER,
+      band_id: DataTypes.INTEGER,
+      start_time: DataTypes.DATE,
+      end_time: DataTypes.DATE,
+    },
+    {
+      sequelize,
+      modelName: "MeetGreet",
+    }
+  );
   return MeetGreet;
 };

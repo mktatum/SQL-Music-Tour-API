@@ -35,7 +35,13 @@ const eventsController = require("./controllers/events_controller");
 app.use("/events", eventsController);
 
 const meetGreetsController = require("./controllers/meet_greets_controller");
-app.use("/events", meetGreetsController);
+app.use("/meet_greets", meetGreetsController);
+
+const musicSetsController = require("./controllers/music_sets_controller");
+app.use("/music_sets", musicSetsController);
+
+const stagesController = require("./controllers/stages_controller");
+app.use("/stages", stagesController);
 
 // LISTEN
 app.listen(process.env.PORT, async () => {

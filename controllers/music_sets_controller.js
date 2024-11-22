@@ -35,7 +35,7 @@ music_sets.get("/:id", async (req, res) => {
   }
 });
 
-music_set.post("/", async (req, res) => {
+music_sets.post("/", async (req, res) => {
   try {
     const newMusicSet = await MusicSet.create(req.body);
     res.json(newMusicSet);
@@ -44,7 +44,7 @@ music_set.post("/", async (req, res) => {
   }
 });
 
-music_set.put("/:id", async (req, res) => {
+music_sets.put("/:id", async (req, res) => {
   try {
     const { event_id, stage_id, band_id, start_time, end_time } = req.body;
     if (!event_id && !stage_id && !band_id && !start_time && !end_time) {
@@ -60,7 +60,7 @@ music_set.put("/:id", async (req, res) => {
   }
 });
 
-music_set.delete("/:id", async (req, res) => {
+music_sets.delete("/:id", async (req, res) => {
   try {
     const deleted = await MusicSet.destroy({
       where: { id: req.params.id },
@@ -71,4 +71,4 @@ music_set.delete("/:id", async (req, res) => {
   }
 });
 
-module.exports = music_set;
+module.exports = music_sets;

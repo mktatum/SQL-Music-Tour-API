@@ -31,7 +31,7 @@ stages.get("/:id", async (req, res) => {
   }
 });
 
-stage.post("/", async (req, res) => {
+stages.post("/", async (req, res) => {
   try {
     const newStage = await Stage.create(req.body);
     res.json(newStage);
